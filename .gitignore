@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# Environments
+venv/
+
+# PyCharm
+.idea/
+
+# Tests
+.coverage
+
+# DB
+*.sqlite3
+
+# Django local settings (save as examle)
+# settings_local.py
