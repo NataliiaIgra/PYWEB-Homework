@@ -4,10 +4,10 @@ from .models import Note
 
 @admin.register(Note)
 class NoteAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'status', 'important', 'public', 'author', 'date_edited')
+    list_display = ('id', 'title', 'date_to_complete', 'author', 'status', 'important', 'public', 'date_edited')
     search_fields = ['title', 'text']
     list_filter = ('public', 'important', 'status')
-    ordering = ['-date_edited', 'important']
+    ordering = ('-date_edited', 'important')
     list_display_links = ('title',)
     readonly_fields = ('author', )
 

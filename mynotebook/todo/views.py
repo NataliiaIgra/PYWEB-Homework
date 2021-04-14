@@ -4,12 +4,15 @@ from rest_framework.exceptions import NotFound
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from django.views import View
 from .models import Note
 from .serializers import NoteListSerializer, NoteSerializer
+from django_filters.rest_framework import DjangoFilterBackend
 
 
-def about(request):
-    ...
+class AboutView(View):
+    def get(self, request):
+        return render(request, 'about.html')
 
 
 class NoteListView(APIView):
@@ -34,8 +37,8 @@ class NoteEditView(APIView):
     permission_classes = (IsAuthenticated, )
 
 
-
 class NoteListViewSet(viewsets.ModelViewSet):
     queryset = Note.objects.all()
     serializer_class = NoteListSerializer
     permission_classes = [permissions.IsAuthenticated]
+    filter_backends = [DjangoFilterBackend]
