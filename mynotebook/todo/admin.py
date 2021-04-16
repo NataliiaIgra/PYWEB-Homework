@@ -7,7 +7,7 @@ class NoteAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'date_to_complete', 'author', 'status', 'important', 'public', 'date_edited')
     search_fields = ['title', 'text']
     list_filter = ('public', 'important', 'status')
-    ordering = ('-date_edited', 'important')
+    ordering = ('date_to_complete', '-important')
     list_display_links = ('title',)
     readonly_fields = ('author', )
 
