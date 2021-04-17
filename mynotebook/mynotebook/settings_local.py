@@ -1,2 +1,0 @@
-ALLOWED_HOSTS = ['*']
-SERVER_VERSION = '1.0'
